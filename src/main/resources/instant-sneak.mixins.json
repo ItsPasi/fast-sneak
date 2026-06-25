@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "com.instantsneak.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": [
+    "client.CameraMixin",
+    "client.EntityPickMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

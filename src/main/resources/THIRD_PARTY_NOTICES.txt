@@ -1,0 +1,4 @@
+This mod's core pre-1.9 sneak-height behavior was written with reference to NoSneakAnim by Chromonym, licensed under Apache License 2.0:
+https://github.com/chromonym/nosneakanim
+
+This version adapts the idea to Minecraft 26.1 official names and adds its own YACL config, third-person toggle, low-ceiling handling, and camera-based block selection fix.
