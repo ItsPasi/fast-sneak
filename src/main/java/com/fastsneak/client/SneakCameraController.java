@@ -147,6 +147,8 @@ public final class SneakCameraController {
 
     private static boolean canApplyToPlayer(LocalPlayer player) {
         return isCameraViewEnabled(player)
+                && !player.isSpectator()
+                && !player.getAbilities().flying
                 && !player.isSwimming()
                 && !player.isVisuallySwimming()
                 && !player.isVisuallyCrawling()
