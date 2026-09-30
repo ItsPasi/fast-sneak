@@ -1,4 +1,4 @@
-package com.instantsneak.client;
+package com.fastsneak.client;
 
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.world.entity.Entity;

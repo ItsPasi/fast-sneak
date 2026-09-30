@@ -1,5 +1,5 @@
 <p align="center">
-    <h1 align="center">Instant Sneak</h1>
+    <h1 align="center">Fast Sneak</h1>
 </p>
 
 Recreates the classic 1.8-style sneak visual instead of the lower sneak animation in new versions.

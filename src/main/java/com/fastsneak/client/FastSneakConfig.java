@@ -1,4 +1,4 @@
-package com.instantsneak.client;
+package com.fastsneak.client;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -12,32 +12,32 @@ import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public final class InstantSneakConfig {
+public final class FastSneakConfig {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
-    private static final Path CONFIG_PATH = FabricLoader.getInstance().getConfigDir().resolve("instant-sneak.json");
+    private static final Path CONFIG_PATH = FabricLoader.getInstance().getConfigDir().resolve("fast-sneak.json");
     private static final SneakHeight DEFAULT_SNEAK_HEIGHT = SneakHeight.PRE_1_9;
 
-    private static InstantSneakConfig instance = new InstantSneakConfig();
+    private static FastSneakConfig instance = new FastSneakConfig();
 
     public SneakHeight sneakHeight = DEFAULT_SNEAK_HEIGHT;
     public boolean animateShallowSneak = false;
     public boolean animateDeepSneak = true;
     public boolean affectThirdPerson = false;
 
-    public static InstantSneakConfig get() {
+    public static FastSneakConfig get() {
         return instance;
     }
 
     public static void load() {
         if (Files.exists(CONFIG_PATH)) {
             try (Reader reader = Files.newBufferedReader(CONFIG_PATH)) {
-                InstantSneakConfig loaded = GSON.fromJson(reader, InstantSneakConfig.class);
+                FastSneakConfig loaded = GSON.fromJson(reader, FastSneakConfig.class);
                 if (loaded != null) {
                     instance = loaded;
                 }
             } catch (Exception exception) {
-                InstantSneakClient.LOGGER.warn("Could not load config, using defaults", exception);
-                instance = new InstantSneakConfig();
+                FastSneakClient.LOGGER.warn("Could not load config, using defaults", exception);
+                instance = new FastSneakConfig();
             }
         }
 
@@ -52,7 +52,7 @@ public final class InstantSneakConfig {
                 GSON.toJson(instance, writer);
             }
         } catch (IOException exception) {
-            InstantSneakClient.LOGGER.warn("Could not save config", exception);
+            FastSneakClient.LOGGER.warn("Could not save config", exception);
         }
     }
 

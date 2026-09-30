@@ -1,4 +1,4 @@
-package com.instantsneak.client;
+package com.fastsneak.client;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
@@ -62,8 +62,8 @@ public final class SneakCameraController {
     }
 
     public static float getShallowSneakEyeHeight() {
-        InstantSneakConfig.SneakHeight height = InstantSneakConfig.get().sneakHeight;
-        return height != null ? height.eyeHeight() : InstantSneakConfig.SneakHeight.PRE_1_9.eyeHeight();
+        FastSneakConfig.SneakHeight height = FastSneakConfig.get().sneakHeight;
+        return height != null ? height.eyeHeight() : FastSneakConfig.SneakHeight.PRE_1_9.eyeHeight();
     }
 
     public static double getMaxVisualEyeOffset() {
@@ -71,11 +71,11 @@ public final class SneakCameraController {
     }
 
     public static boolean shouldAnimateShallowSneak() {
-        return InstantSneakConfig.get().animateShallowSneak;
+        return FastSneakConfig.get().animateShallowSneak;
     }
 
     public static boolean shouldAnimateDeepSneak() {
-        return InstantSneakConfig.get().animateDeepSneak;
+        return FastSneakConfig.get().animateDeepSneak;
     }
 
     public static boolean isCustomCameraActive(Entity entity) {
@@ -159,7 +159,7 @@ public final class SneakCameraController {
             return false;
         }
 
-        return minecraft.options.getCameraType().isFirstPerson() || InstantSneakConfig.get().affectThirdPerson;
+        return minecraft.options.getCameraType().isFirstPerson() || FastSneakConfig.get().affectThirdPerson;
     }
 
     private static boolean isVanillaSneakingForPick(LocalPlayer player) {
@@ -198,12 +198,11 @@ public final class SneakCameraController {
 
         Vec3 forwardDirection = getHorizontalFacing(player);
         double forwardX = forwardDirection.x;
-        double forwardZ = forwardDirection.z;
-        double leftX = forwardZ;
+        double leftX = forwardDirection.z;
         double leftZ = -forwardX;
 
         double offsetX = forwardX * forward + leftX * left;
-        double offsetZ = forwardZ * forward + leftZ * left;
+        double offsetZ = leftX * forward + leftZ * left;
         double offsetLength = horizontalLength(offsetX, offsetZ);
         if (offsetLength <= MIN_HORIZONTAL_LENGTH) {
             return Vec3.ZERO;

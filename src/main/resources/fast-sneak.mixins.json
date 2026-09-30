@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "com.instantsneak.mixin",
+  "package": "com.fastsneak.mixin",
   "compatibilityLevel": "JAVA_25",
   "client": [
     "client.CameraMixin",

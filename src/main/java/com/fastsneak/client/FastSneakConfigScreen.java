@@ -1,4 +1,4 @@
-package com.instantsneak.client;
+package com.fastsneak.client;
 
 import dev.isxander.yacl3.api.ConfigCategory;
 import dev.isxander.yacl3.api.Option;
@@ -12,16 +12,16 @@ import net.minecraft.network.chat.Component;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public final class InstantSneakConfigScreen {
-    private InstantSneakConfigScreen() {
+public final class FastSneakConfigScreen {
+    private FastSneakConfigScreen() {
     }
 
     public static Screen create(Screen parent) {
-        InstantSneakConfig config = InstantSneakConfig.get();
-        InstantSneakConfig defaults = new InstantSneakConfig();
+        FastSneakConfig config = FastSneakConfig.get();
+        FastSneakConfig defaults = new FastSneakConfig();
 
         return YetAnotherConfigLib.createBuilder()
-                .title(literal("Instant Sneak"))
+                .title(literal("Fast Sneak"))
                 .category(ConfigCategory.createBuilder()
                         .name(literal("General"))
                         .option(sneakHeightOption(config, defaults))
@@ -47,18 +47,18 @@ public final class InstantSneakConfigScreen {
                                 value -> config.affectThirdPerson = value
                         ))
                         .build())
-                .save(InstantSneakConfig::save)
+                .save(FastSneakConfig::save)
                 .build()
                 .generateScreen(parent);
     }
 
-    private static Option<InstantSneakConfig.SneakHeight> sneakHeightOption(InstantSneakConfig config, InstantSneakConfig defaults) {
-        return Option.<InstantSneakConfig.SneakHeight>createBuilder()
+    private static Option<FastSneakConfig.SneakHeight> sneakHeightOption(FastSneakConfig config, FastSneakConfig defaults) {
+        return Option.<FastSneakConfig.SneakHeight>createBuilder()
                 .name(literal("Sneak Height"))
                 .description(description("Changes the sneaking height."))
                 .binding(defaults.sneakHeight, () -> config.sneakHeight, value -> config.sneakHeight = value)
                 .controller(option -> EnumControllerBuilder.create(option)
-                        .enumClass(InstantSneakConfig.SneakHeight.class))
+                        .enumClass(FastSneakConfig.SneakHeight.class))
                 .build();
     }
 

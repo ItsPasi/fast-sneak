@@ -1,6 +1,6 @@
-package com.instantsneak.mixin.client;
+package com.fastsneak.mixin.client;
 
-import com.instantsneak.client.SelectionRaycastController;
+import com.fastsneak.client.SelectionRaycastController;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.HitResult;
 import org.spongepowered.asm.mixin.Mixin;
@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(Entity.class)
 public abstract class EntityPickMixin {
     @Inject(method = "pick", at = @At("HEAD"), cancellable = true, require = 0)
-    private void instantSneak$pickFromSneakCamera(
+    private void fastSneak$pickFromSneakCamera(
             double hitDistance,
             float partialTicks,
             boolean hitFluids,

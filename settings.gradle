@@ -10,4 +10,4 @@ pluginManagement {
 }
 
 // Should match your modid
-rootProject.name = 'instant-sneak'
+rootProject.name = 'fast-sneak'
