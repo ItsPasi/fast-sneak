@@ -2,7 +2,7 @@
     <h1 align="center">Fast Sneak</h1>
 </p>
 
-Recreates the classic 1.8-style sneak visual instead of the lower sneak height and animation in new versions.
+Recreates the classic 1.8-style sneak style, instead of the lower sneak height and animation in new versions.
 
 <h1>Functionality</h1>
 
