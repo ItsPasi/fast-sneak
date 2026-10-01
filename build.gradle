@@ -58,6 +58,10 @@ jar {
 	}
 }
 
+tasks.withType(AbstractArchiveTask).configureEach {
+	archiveVersion.set("${project.mod_version}+mc${project.minecraft_version_name}")
+}
+
 // configure the maven publication
 publishing {
 	publications {
